@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+          <variable name="item" type="com.example.avaqi.zapposapp.model.Item"/>
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:id="@+id/toprl">
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="false"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/addd"
+                    />
+                <RelativeLayout
+                    android:id="@+id/item_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                    <ImageView
+                        android:id="@+id/itemPic"
+                        android:scaleType="fitCenter"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"/>
+
+
+                    <TextView
+                        android:id="@+id/itemName"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/itemPic"
+                        android:textSize="20sp"
+                        android:padding="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text= "@{item.productName}"/>
+
+
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/itemDetails"
+                    android:lineSpacingExtra="5dp"
+                    android:layout_below="@+id/item_header"
+                    android:layout_margin="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text= "@{item.details}"/>
+
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+        <ImageView
+            android:id="@+id/cart"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/cart" />
+        <TextView
+            android:id="@+id/count"
+            android:text="0"
+            android:textSize="17sp"
+            android:layout_alignTop="@+id/cart"
+            android:layout_toLeftOf="@+id/cart"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.SearchResult.Subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+</layout>
